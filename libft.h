@@ -6,7 +6,7 @@
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 07:58:19 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 13:56:06 by mschumac         ###   ########.fr       */
+/*   Updated: 2017/05/16 14:15:47 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *string, int needle, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
+char*	ft_strdup(const char *s1);
+char*	ft_strcpy(char * dst, const char * src);
 #endif
