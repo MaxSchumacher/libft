@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/08 03:55:34 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 20:53:24 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/16 19:15:58 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/19 20:54:53 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "../libft.h"
 
-void	*ft_memccpy(void *destination, const void *source, int c, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	unsigned char	*typed_destination;
-	const char		*typed_source;
-
-	typed_destination = (unsigned char *)destination;
-	typed_source = (char *)source;
-	while (n--)
-	{
-		if ((*typed_destination++ = *typed_source++) == (unsigned char)c)
-			return (typed_destination);
-	}
-	return (NULL);
+	ft_strcpy(s1 + ft_strlen(s1), s2);
+	return (s1);
 }
