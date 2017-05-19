@@ -6,7 +6,7 @@
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 19:15:58 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 20:55:23 by mschumac         ###   ########.fr       */
+/*   Updated: 2017/05/19 22:49:26 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	(n >= ft_strlen(s2)) ? ft_strcat(s1, s2) : strncpy(s1 + strlen(s1), s2, n);
+	if (n >= ft_strlen(s2))
+		ft_strcat(s1, s2);
+	else
+		ft_strncpy(s1 + ft_strlen(s1), s2, n);
 	return (s1);
 }
