@@ -6,7 +6,7 @@
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 07:58:19 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 22:11:29 by mschumac         ###   ########.fr       */
+/*   Updated: 2017/05/20 18:13:44 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strcpy(char * dst, const char * src);
 char	*ft_strncpy(char * dst, const char * src, size_t len);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
-size_t	ft_strlcat(char*dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+char    *ft_strchr(const char *s, int c);
 #endif
