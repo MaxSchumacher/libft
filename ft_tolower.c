@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 19:15:58 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 22:49:26 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/22 03:21:55 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/22 03:24:34 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "../libft.h"
+#include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int		ft_tolower(int c)
 {
-	if (n >= ft_strlen(s2))
-		ft_strcat(s1, s2);
-	else
-		ft_strncpy(s1 + ft_strlen(s1), s2, n);
-	return (s1);
+	if (ft_isupper(c))
+		return (c + 32);
+	return (c);
 }

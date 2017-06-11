@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/07 01:14:25 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 20:51:18 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/16 14:07:26 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/16 14:39:32 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	ft_bzero(void *memory_starting_location, size_t number_of_bytes)
+char	*ft_strdup(const char *s1)
 {
-	char *null_string;
+	char *new_string;
 
-	null_string = memory_starting_location;
-	if (number_of_bytes < 1)
-		return ;
-	while (number_of_bytes--)
-		*null_string++ = '\0';
+	new_string = (char*)malloc(ft_strlen(s1) + 1);
+	if (!new_string)
+		return (NULL);
+	return (ft_strcpy(new_string, s1));
 }

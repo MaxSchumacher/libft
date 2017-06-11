@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 14:14:26 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 14:39:04 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/22 03:01:13 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/22 03:13:09 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+int		ft_isdigit(int c)
+{
+	return ((c >= 48 && c <= 57));
 }

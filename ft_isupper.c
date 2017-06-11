@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 19:15:58 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 20:54:53 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/22 02:36:40 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/22 03:26:22 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int     ft_isupper(int c)
 {
-	ft_strcpy(s1 + ft_strlen(s1), s2);
-	return (s1);
+	return (c >= 65 && c <= 90);
 }

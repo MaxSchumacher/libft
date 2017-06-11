@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 13:50:26 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 13:55:42 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/05 20:28:55 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/06 04:43:45 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memset(void *destination, int c, size_t byte_counter)
 {
-	int length;
+	unsigned char *initial_destination;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
+	initial_destination = destination;
+	while (byte_counter--)
+		*initial_destination++ = (unsigned char)c;
+	return (destination);
 }

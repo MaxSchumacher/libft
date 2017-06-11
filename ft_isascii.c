@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/08 03:08:25 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/19 20:54:23 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/22 03:01:13 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/22 03:28:23 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_isascii(int c)
 {
-	char		*destination;
-	const char	*source;
-
-	destination = (char *)dst;
-	source = (char *)src;
-	while (n--)
-		*destination++ = *source++;
-	return (dst);
+	return ((c >= 0 && c <= 127));
 }

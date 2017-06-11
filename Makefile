@@ -6,43 +6,68 @@
 #    By: mschumac <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/28 23:38:17 by mschumac          #+#    #+#              #
-#    Updated: 2017/05/12 17:17:00 by mschumac         ###   ########.fr        #
+#    Updated: 2017/06/11 22:11:43 by mschumac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME	 = libft.a
+OBJECTS_DIRECTORY = objects
 COMPILER = clang
-SOURCES = sources/ft_*.c
-OBJECTS = $(SOURCES:.c=.o)
-# prototypes for the library's functions
-HEADERS = libft.h
-COMPILER_FLAGS = -Wextra -Wall -Werror  
-COMPILER_OPTIONS = -c -I$(HEADERS)
-TEST_PATH = tests/
-TESTS_SOURCE = \
-				$(STRING) \
-				$(MEMORY) \
+COMPILER_FLAGS = -Wextra -Wall -Werror
+COMPILER_OPTIONS = -Iincludes -c
 
-TESTS = $(wildcard $(TESTS_SOURCE)*.c)
-				# all other categories of functions
+SOURCES	 =  ft_atoi.c \
+			ft_bzero.c \
+			ft_isalnum.c \
+			ft_isalpha.c \
+			ft_islower.c \
+			ft_isupper.c \
+			ft_isascii.c \
+			ft_isdigit.c \
+			ft_isprint.c \
+			ft_memalloc.c \
+			ft_memccpy.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_memcpy.c \
+			ft_memdel.c \
+			ft_memmove.c \
+			ft_memset.c \
+			ft_strcat.c \
+			ft_strchr.c \
+			ft_strcmp.c \
+			ft_strcpy.c \
+			ft_strdup.c \
+			ft_strlcat.c \
+			ft_strlen.c \
+			ft_strncat.c \
+			ft_strncmp.c \
+			ft_strncpy.c \
+			ft_strnlen.c \
+			ft_strnstr.c \
+			ft_strrchr.c \
+			ft_strstr.c \
+			ft_tolower.c \
+			ft_toupper.c 
 
-TESTING_FRAMEWORK = $(TESTS)/Unity/src/unity.c
-
-# both in tests and in src, modules are categorized according to standard libc
-STRING = string/
+OBJECTS = $(SOURCES:%.c=$(OBJECTS_DIRECTORY)/%.o)
 
 all: $(NAME)
 
-$(NAME):
+$(OBJECTS_DIRECTORY):
+	mkdir -p $(OBJECTS_DIRECTORY)
+
+$(OBJECTS_DIRECTORY)/%.o: %.c
 	@ echo "Compiling objects ..."
-	$(COMPILER) $(COMPILER_FLAGS) -O2 $(COMPILER_OPTIONS) $(SOURCES) 
+	$(COMPILER) $(COMPILER_FLAGS) $(COMPILER_OPTIONS) $< -o $@
+
+$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@ echo "Bundling objects into library & creating index to speed up linking ..."
-	ar -rcs $(NAME) ft_*.o 
-	make clean
+	ar -rcs $(NAME) $(OBJECTS) 
 
 clean:
 	@ echo "Deleting all object files ..."
-	rm -rf ft_*.o 
+	rm -rf $(OBJECTS_DIRECTORY) 
 
 fclean: clean
 	@ echo "Deleting $(NAME) ..."
@@ -51,15 +76,4 @@ fclean: clean
 re: fclean all
 
 lint:
-	norminette $(SOURCES)
-
-test: re # e.g. always test with the newest version
-
-%: %.c
-	@ echo "Compiling Testsuite ..."
-	# Take all c files and produce binaries of the same name
-	# $@ filename of target 
-	# $< is the name of the dependency (_test source)
-	$(COMPILER) $(COMPILER_FLAGS) -g $< $(TESTING_FRAMEWORK) -I$(NAME) -o $@  
-	@ echo "Running Testsuite ..."
-	# execute all newly compiled test binaries
+	norminette $(SOURCES) $(HEADER)

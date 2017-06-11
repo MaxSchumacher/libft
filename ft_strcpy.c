@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/09 07:55:43 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 12:53:17 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/16 14:14:26 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/16 14:39:04 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *string, int needle, size_t n)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	unsigned char *typed_string;
+	int i;
 
-	typed_string = (unsigned char *)string;
-	while (n--)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		if (*typed_string++ == (unsigned char)needle)
-			return (typed_string - 1);
+		dst[i] = src[i];
+		i++;
 	}
-	return (NULL);
+	dst[i] = '\0';
+	return (dst);
 }

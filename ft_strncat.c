@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/11 08:20:30 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 13:47:49 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/16 19:15:58 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/22 02:30:11 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	unsigned char *typed_s1;
-	unsigned char *typed_s2;
-
-	typed_s1 = (unsigned char*)s1;
-	typed_s2 = (unsigned char*)s2;
-	if (typed_s1 == typed_s2 || n == 0)
-		return (0);
-	while (n--)
-	{
-		if (*typed_s1 != *typed_s2)
-			return (*typed_s1 - *typed_s2);
-		typed_s1++;
-		typed_s2++;
-	}
-	return (0);
+	if (n > ft_strlen(s2))
+		ft_strcat(s1, s2);
+	else
+		ft_strncpy(s1 + ft_strlen(s1), s2, n);
+	return (s1);
 }

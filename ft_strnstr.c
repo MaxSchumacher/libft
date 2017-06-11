@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 14:07:26 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/16 14:39:32 by mschumac         ###   ########.fr       */
+/*   Created: 2017/05/21 00:08:34 by mschumac          #+#    #+#             */
+/*   Updated: 2017/05/21 00:14:08 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-#include "../libft.h"
-
-char	*ft_strdup(const char *s1)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char *new_string;
+	size_t needle_len;
 
-	new_string = (char*)malloc(ft_strlen(s1) + 1);
-	if (!new_string)
-		return (NULL);
-	return (ft_strcpy(new_string, s1));
+	needle_len = ft_strlen(needle);
+	if (needle_len == 0)
+		return ((char*)haystack);
+	while (*haystack != '\0' && len--)
+	{
+		if (ft_strncmp(needle, haystack, needle_len) == 0)
+			return ((char*)haystack);
+		haystack++;
+	}
+	return (NULL);
 }
