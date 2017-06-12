@@ -6,7 +6,7 @@
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/12 00:03:12 by mschumac          #+#    #+#             */
-/*   Updated: 2017/06/12 00:05:46 by mschumac         ###   ########.fr       */
+/*   Updated: 2017/06/12 23:30:04 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strclr(char *s)
 {
+	if (s == NULL)
+		return ;
 	ft_memset(s, '\0', ft_strlen(s));
 }
