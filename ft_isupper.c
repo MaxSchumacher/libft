@@ -6,13 +6,13 @@
 /*   By: mschumac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 02:36:40 by mschumac          #+#    #+#             */
-/*   Updated: 2017/05/22 03:26:22 by mschumac         ###   ########.fr       */
+/*   Updated: 2017/06/12 19:44:28 by mschumac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isupper(int c)
+int		ft_isupper(int c)
 {
 	return (c >= 65 && c <= 90);
 }
