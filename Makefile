@@ -6,7 +6,7 @@
 #    By: mschumac <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/28 23:38:17 by mschumac          #+#    #+#              #
-#    Updated: 2017/06/12 19:54:56 by mschumac         ###   ########.fr        #
+#    Updated: 2017/06/12 23:36:26 by mschumac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SOURCES	 =  ft_atoi.c \
 			ft_strclr.c \
 			ft_striter.c \
 			ft_striteri.c \
+			ft_strmap.c
 
 OBJECTS = $(SOURCES:%.c=$(OBJECTS_DIRECTORY)/%.o)
 
