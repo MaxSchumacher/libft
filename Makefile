@@ -6,7 +6,7 @@
 #    By: mschumac <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/28 23:38:17 by mschumac          #+#    #+#              #
-#    Updated: 2017/06/30 23:02:52 by mschumac         ###   ########.fr        #
+#    Updated: 2017/07/01 00:11:46 by mschumac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,9 @@ SOURCES	 =  ft_atoi.c \
 			ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstdel.c \
-			ft_lstadd.c
+			ft_lstadd.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 
 OBJECTS = $(SOURCES:%.c=$(OBJECTS_DIRECTORY)/%.o)
 
