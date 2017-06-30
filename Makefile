@@ -6,7 +6,7 @@
 #    By: mschumac <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/28 23:38:17 by mschumac          #+#    #+#              #
-#    Updated: 2017/06/26 01:24:43 by mschumac         ###   ########.fr        #
+#    Updated: 2017/06/30 23:02:52 by mschumac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,11 @@ SOURCES	 =  ft_atoi.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c \
+			ft_lstnew.c \
+			ft_lstdelone.c \
+			ft_lstdel.c \
+			ft_lstadd.c
 
 OBJECTS = $(SOURCES:%.c=$(OBJECTS_DIRECTORY)/%.o)
 
