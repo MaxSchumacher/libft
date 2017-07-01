@@ -23,9 +23,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (signed_s1[0] == '\0' || signed_s2[0] == '\0')
 		return (signed_s1[i] - signed_s2[i]);
-	while (signed_s1[i] != '\0' && n--)
+	while (n--)
 	{
-		if (signed_s1[i] != signed_s2[i])
+		if (signed_s1[i] != signed_s2[i] || signed_s1[i] == '\0')
 			return (signed_s1[i] - signed_s2[i]);
 		i++;
 	}
