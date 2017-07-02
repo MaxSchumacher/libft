@@ -43,7 +43,6 @@ char		**ft_strsplit(char const *s, char c)
 	char	**substrings;
 	int		len_current_substring;
 	int		i;
-	int		x;
 
 	substrings = (char **)malloc(sizeof(char*) * (s_counter(s, c) + 1));
 	if (substrings == NULL || s == NULL)
@@ -55,7 +54,9 @@ char		**ft_strsplit(char const *s, char c)
 		if (len_current_substring)
 		{
 			substrings[i] = ft_strnew(len_current_substring);
-			x = *ft_strncpy(substrings[i], s, len_current_substring);
+			if (substrings[i] == NULL)
+				return (NULL);
+			substrings[i] = ft_strsub(s, 0, len_current_substring);
 			i++;
 			s += len_current_substring;
 		}

@@ -21,6 +21,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	signed_s1 = (const unsigned char*)s1;
 	signed_s2 = (const unsigned char*)s2;
 	i = 0;
+	if (n == 0)
+		return (0);
 	if (signed_s1[0] == '\0' || signed_s2[0] == '\0')
 		return (signed_s1[i] - signed_s2[i]);
 	while (n--)
